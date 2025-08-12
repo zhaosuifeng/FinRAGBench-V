@@ -963,7 +963,7 @@
         "query": "Based on the commodity prices of Emerging Market Bond Index (EMBI) Global Sovereign Spreads, which commodity is the highest on 7-March-2022?",
         "answer": "Ecuador",
         "category": "Chart-Information Extraction",
-        "answer_type": "sWWhort"
+        "answer_type": "short"
     },
     {
         "query-id": "毕马威：2024年第三季度全球风险投资报告（英文版）_66.png-1",
@@ -1233,8 +1233,8 @@
     },
     {
         "query-id": "NASDAQ_TSBK_2020_135.png-1",
-        "query": "In the 'Notes to Consolidated Financial Statements' document of Timberland Bancorp, Inc. for September 30, 2020 and 2019, what is the difference in provision for loan losses between September 30, 2020 and September 31, 2019?",
-        "answer": "200.",
+        "query": "In the 'Notes to Consolidated Financial Statements' document of Timberland Bancorp, Inc. for September 30, 2020 and 2019, what is the difference in provision for loan losses between September 30, 2020 and December 31, 2019?",
+        "answer": "300.",
         "category": "Table-Numerical Calculation",
         "answer_type": "short"
     },
