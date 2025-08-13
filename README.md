@@ -1,1 +1,1 @@
-This is the dataset for FinRAGBench-V, corpus in https://huggingface.co/zsfhhh/FinRAGBench-V/
+This is the dataset for FinRAGBench-V, corpus is available at https://huggingface.co/datasets/zsfhhh/FinRAGBench-V/
