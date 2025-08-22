@@ -1,1 +1,3 @@
-This is the dataset for FinRAGBench-V, corpus is available at https://huggingface.co/datasets/zsfhhh/FinRAGBench-V/
+<img src="plots/logo.png" alt="FinRAGBench-V Logo" width="80" align="left" />
+
+# FinRAGBench-V: A Benchmark for Visual RAG in the Financial Domain
