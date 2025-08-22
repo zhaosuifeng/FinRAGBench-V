@@ -7,7 +7,10 @@ FinRAGBench-V is a **comprehensive benchmark for visual retrieval-augmented gene
 🤗 [Dataset](https://huggingface.co/datasets/zsfhhh/FinRAGBench-V) | 📄 [Paper](https://arxiv.org/abs/2505.17471) | 🏠 [Project Page](https://github.com/zhaosuifeng/FinRAGBench-V)
 
 ---
-<img src="assets/main_fig.png" alt="FinRAGBench-V main figure" width="80" align="center" />
+<p align="center">
+  <img src="assets/main_fig.png" alt="FinRAGBench-V main figure" width="600" />
+</p>
+
 ## Overview
 
 - **Multimodal Retrieval Corpus:**  
