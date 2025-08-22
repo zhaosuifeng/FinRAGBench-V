@@ -31,14 +31,6 @@ We propose an **automatic evaluation method** for visual citation, which:
 - Measures **precision and recall** at multiple citation levels.
 - Uses **box-bounding** and **image-cropping** techniques to assess the alignment of cited visual evidence.
 
-## Key Insights from Experiments
-
-- Different retrieval strategies significantly affect model performance.  
-- Task-dependent variations highlight the challenges of multimodal reasoning.  
-- Visual citation remains a challenging aspect, underscoring the need for robust multimodal evaluation benchmarks.  
-
-These findings validate **FinRAGBench-V** as a valuable resource for developing and evaluating visual RAG systems in finance.
-
 ## Quick Start
 
 ```bash
