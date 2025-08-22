@@ -6,26 +6,15 @@ FinRAGBench-V is a **comprehensive benchmark for visual retrieval-augmented gene
 
 🤗 [Dataset](https://huggingface.co/datasets/zsfhhh/FinRAGBench-V) | 📄 [Paper](https://arxiv.org/abs/2505.17471) | 🏠 [Project Page](https://github.com/zhaosuifeng/FinRAGBench-V)
 
----
 <p align="center">
   <img src="assets/main_fig.png" alt="FinRAGBench-V main figure" width="600" />
 </p>
 
-## Overview
+## Benchmark: FinRAGBench-V
 
-- **Multimodal Retrieval Corpus:**  
-  - 60,780 Chinese pages and 51,219 English pages.
-  - Covers heterogeneous data types including financial reports, charts, and tables.
+- **Multimodal Retrieval Corpus:**  We construct a multimodal financial corpus by collecting documents from various real-world financial sources, including research reports, financial statements, prospectuses, academic papers, financial magazines, and financial news. The corpus contains 60,780 Chinese pages and 51,219 English pages from 1,104 Chinese and 1,105 English documents.
   
-- **High-Quality QA Dataset:**  
-  - Human-annotated question-answer pairs.
-  - Includes seven question categories spanning reasoning, fact-checking, trend analysis, and more.
-  
-- **Visual Citation:**  
-  - Provides page- and block-level evidence to support generated answers.
-  - Enables traceable and interpretable multimodal RAG.
-
----
+- **High-Quality QA Dataset:**  We construct  a high-quality, human-annotated question-answering (QA) dataset spanning heterogeneous data types (charts, tables, and texts) and seven question categories, including time-sensitive, numerical calculations, comparison and sorting, and multi-page queries.
 
 ## Baseline: RGenCite
 
@@ -35,17 +24,12 @@ We provide **RGenCite**, a multimodal RAG baseline that seamlessly integrates:
 2. **Generation:** Produces high-quality answers grounded in retrieved content.  
 3. **Fine-Grained Visual Citation:** Provides precise visual evidence (page- and block-level) to support answers.
 
----
-
 ## Automatic Citation Evaluation
 
 We propose an **automatic evaluation method** for visual citation, which:
 
 - Measures **precision and recall** at multiple citation levels.
 - Uses **box-bounding** and **image-cropping** techniques to assess the alignment of cited visual evidence.
-- Provides a systematic way to benchmark multimodal RAG performance beyond text generation.
-
----
 
 ## Key Insights from Experiments
 
@@ -54,8 +38,6 @@ We propose an **automatic evaluation method** for visual citation, which:
 - Visual citation remains a challenging aspect, underscoring the need for robust multimodal evaluation benchmarks.  
 
 These findings validate **FinRAGBench-V** as a valuable resource for developing and evaluating visual RAG systems in finance.
-
----
 
 ## Quick Start
 
