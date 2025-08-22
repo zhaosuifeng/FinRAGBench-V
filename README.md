@@ -12,17 +12,17 @@ FinRAGBench-V is a **comprehensive benchmark for visual retrieval-augmented gene
 
 ## Benchmark: FinRAGBench-V
 
-- **Multimodal Retrieval Corpus:**  We construct a multimodal financial corpus by collecting documents from various real-world financial sources, including research reports, financial statements, prospectuses, academic papers, financial magazines, and financial news. The corpus contains 60,780 Chinese pages and 51,219 English pages from 1,104 Chinese and 1,105 English documents.
+- 📊 **Multimodal Retrieval Corpus:**  We construct a multimodal financial corpus by collecting documents from various real-world financial sources, including research reports, financial statements, prospectuses, academic papers, financial magazines, and financial news. The corpus contains 60,780 Chinese pages and 51,219 English pages from 1,104 Chinese and 1,105 English documents.
   
-- **High-Quality QA Dataset:**  We construct  a high-quality, human-annotated question-answering (QA) dataset spanning heterogeneous data types (charts, tables, and texts) and seven question categories, including time-sensitive, numerical calculations, comparison and sorting, and multi-page queries.
+- 📝 **High-Quality QA Dataset:**  We construct  a high-quality, human-annotated question-answering (QA) dataset spanning heterogeneous data types (charts, tables, and texts) and seven question categories, including time-sensitive, numerical calculations, comparison and sorting, and multi-page queries.
 
 ## Baseline: RGenCite
 
 We provide **RGenCite**, a multimodal RAG baseline that seamlessly integrates:
 
-1. **Retrieval:** Efficiently retrieves relevant textual and visual information from the dataset.  
-2. **Generation:** Produces high-quality answers grounded in retrieved content.  
-3. **Fine-Grained Visual Citation:** Provides precise visual evidence (page- and block-level) to support answers.
+- 🔍 **Retrieval:** Efficiently retrieves relevant textual and visual information from the dataset.  
+- ✍️ **Generation:** Produces high-quality answers grounded in retrieved content.  
+- 📌 **Fine-Grained Visual Citation:** Provides precise visual evidence (page- and block-level) to support answers.
 
 ## Automatic Citation Evaluation
 
