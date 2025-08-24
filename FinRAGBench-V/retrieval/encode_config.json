@@ -1,0 +1,23 @@
+{
+ "qrels_path":"./dataset/en/qrels/qrels_en.tsv",
+  "query_path": "./queries/queries_en.parquet",
+  "corpus_path": "./corpus/en/",
+  "model_name_or_path": "./colqwen2-v1.0-merged",
+  "output_dir":"./encode/colqwen/",
+  "query_template": "Represent this query for retrieving relevant documents: <query>",
+  "doc_template": "<text>",
+  "q_max_len": 512,
+  "p_max_len": 2048,
+  "per_device_eval_batch_size": 2,
+  "dataloader_num_workers": 1,
+  "dtype": "float16",
+  "use_gpu": true,
+  "overwrite_output_dir": false,
+  "max_inmem_docs": 1000000,
+  "normalize": true,
+  "pooling": "wmean",
+  "attention": "causal",
+  "attn_implementation": "sdpa",
+  "phase": "encode",
+  "from_hf_repo": false
+}

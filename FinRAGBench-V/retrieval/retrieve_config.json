@@ -1,0 +1,10 @@
+{
+  "model_name_or_path": "./colqwen2-v1.0-merged",
+  "qrels_path":"./dataset/en/qrels/qrels_en.tsv",
+  "query_path": "./queries/queries_en.parquet",
+  "output_dir": "",
+  "use_gpu": true,
+  "phase": "retrieve",
+  "retrieve_depth": 20,
+  "from_hf_repo": false
+}
