@@ -40,6 +40,7 @@ conda create --name finragbench python=3.11 -y
 conda activate finragbench
 pip install -r requirements.txt
 pip install -e .
+```
 
 ## Dataset Download and Preprocessing
 Download the corpus parts from zsfhhh/FinRAGBench-V, store them into ./data/corpus/en and ./data/corpus/ch respectively, and preprocess it.
@@ -48,7 +49,4 @@ mkdir -p ./data/corpus/en
 cd ./data/corpus/en
 cat part_*.tar.gz > corpus_en.tar.gz
 tar -xzvf corpus_en.tar.gz
-
-
-
-
+```
