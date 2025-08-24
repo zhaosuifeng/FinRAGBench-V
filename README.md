@@ -52,3 +52,25 @@ tar -xzvf corpus_en.tar.gz
 cd FinRAGBench-V/prepare_data.
 python generate_parquet.py
 ```
+
+## Baseline
+For retrieval and its evaluation:
+```bash
+cd retrieval
+python eval_mm_retriever.py
+```
+use encode_config.json for encoding and retrieve_config.json for retrieval.
+
+For generating answers with visual citations:
+```bash
+cd generation
+python generate.py
+```
+For evaluating answers and citations:
+```bash
+cd eval
+python eval_generation.py
+python eval_citation.py
+```
+
+
