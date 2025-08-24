@@ -49,4 +49,6 @@ mkdir -p ./data/corpus/en
 cd ./data/corpus/en
 cat part_*.tar.gz > corpus_en.tar.gz
 tar -xzvf corpus_en.tar.gz
+cd FinRAGBench-V/prepare_data.
+python generate_parquet.py
 ```
