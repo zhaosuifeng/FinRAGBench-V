@@ -34,7 +34,18 @@ We propose an **automatic evaluation method** for visual citation, which:
 ## Quick Start
 
 ```bash
-# Clone the repository
+# 1. Clone the repository
 git clone https://github.com/zhaosuifeng/FinRAGBench-V.git
 cd FinRAGBench-V
+
+# 2. Create and activate a Conda environment
+conda create --name finragbench python=3.11 -y
+conda activate finragbench
+
+#3. Install dependencies
+pip install -r requirements.txt
+pip install -e .
+
+#4. Download the corpus
+Download English and Chinese corpus parts from zsfhhh/FinRAGBench-V
 
