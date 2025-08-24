@@ -31,32 +31,22 @@ We propose an **automatic evaluation method** for visual citation, which:
 - Measures **precision and recall** at multiple citation levels.
 - Uses **box-bounding** and **image-cropping** techniques to assess the alignment of cited visual evidence.
 
-## Quick Start
+## Installation
 
 ```bash
-# 1. Clone the repository
 git clone https://github.com/zhaosuifeng/FinRAGBench-V.git
 cd FinRAGBench-V
-
-# 2. Create and activate a Conda environment
 conda create --name finragbench python=3.11 -y
 conda activate finragbench
-
-#3. Install dependencies
 pip install -r requirements.txt
 pip install -e .
 
-#4. Create folders for English and Chinese corpus and download the corpus parts from zsfhhh/FinRAGBench-V
-Create directories for storing the English and Chinese corpus parts:
+## Dataset Download and Preprocessing
+Download the corpus parts from zsfhhh/FinRAGBench-V, store them into ./data/corpus/en and ./data/corpus/ch respectively, and preprocess it.
+```bash
 mkdir -p ./data/corpus/en
-Then, download the corresponding corpus parts from zsfhhh/FinRAGBench-V, and move them into the respective folders.
-
-#5. Concatenate parts and unzip
-# Navigate to English corpus folder
 cd ./data/corpus/en
-# Concatenate tar.gz parts into a single archive (if needed)
 cat part_*.tar.gz > corpus_en.tar.gz
-# Unzip the combined archive
 tar -xzvf corpus_en.tar.gz
 
 
