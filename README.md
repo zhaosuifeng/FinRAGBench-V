@@ -37,7 +37,6 @@ We propose an **automatic evaluation method** for visual citation, which:
 
 ```bash
 git clone https://github.com/zhaosuifeng/FinRAGBench-V.git
-cd FinRAGBench-V
 conda create --name finragbench python=3.11 -y
 conda activate finragbench
 pip install -r requirements.txt
@@ -58,19 +57,19 @@ python generate_parquet.py
 ## Baseline
 For retrieval and its evaluation:
 ```bash
-cd retrieval
+cd ./FinRAGBench-V/retrieval
 python eval_mm_retriever.py
 ```
 use encode_config.json for encoding and retrieve_config.json for retrieval.
 
 For generating answers with visual citations:
 ```bash
-cd generation
+cd ./FinRAGBench-V/generation
 python generate.py
 ```
 For evaluating answers and citations:
 ```bash
-cd eval
+cd ./FinRAGBench-V/eval
 python eval_generation.py
 python eval_citation.py
 ```
