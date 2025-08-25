@@ -44,15 +44,30 @@ pip install -e .
 ```
 
 ## Dataset Download and Preprocessing
-Download the corpus parts from zsfhhh/FinRAGBench-V, store them into ./data/corpus/en and ./data/corpus/ch respectively, and preprocess it.
+
+First, download all dataset files (including **corpus**, **queries**, and **qrels**) from [zsfhhh/FinRAGBench-V](https://huggingface.co/datasets/zsfhhh/FinRAGBench-V/tree/main) and place them into the corresponding folders under `./data/`.
+
+The corpus is provided in multiple split parts (`part_*.tar.gz`). Please merge them before extraction.
+
+### Example (English corpus)
+
 ```bash
+# Create folder
 mkdir -p ./data/corpus/en
 cd ./data/corpus/en
+
+# Merge all parts into a single tar.gz
 cat part_*.tar.gz > corpus_en.tar.gz
+
+# Extract
 tar -xzvf corpus_en.tar.gz
+
+# Back to prepare_data
 cd ../../../prepare_data
+
+# Convert corpus and queries into parquet format
 python generate_parquet.py
-```
+
 
 ## Baseline
 For retrieval and its evaluation:
