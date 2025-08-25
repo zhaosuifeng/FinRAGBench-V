@@ -69,25 +69,26 @@ cd ../../../prepare_data
 python generate_parquet.py
 ```
 
-## Baseline
-For retrieval and its evaluation:
+## Retrieval:
 ```bash
 cd ./FinRAGBench-V/retrieval
 python eval_mm_retriever.py
 ```
 use encode_config.json for encoding and retrieve_config.json for retrieval.
 
-For generating answers with visual citations:
+## Generation:
 ```bash
 cd ./FinRAGBench-V/generation
 python generate.py
 ```
-For evaluating answers and citations:
+
+## Evaluation:
 ```bash
 cd ./FinRAGBench-V/eval
 python eval_generation.py
 python eval_citation.py
 ```
+
 ## Other Related Projects
 - [OpenMatch](https://github.com/thunlp/OpenMatch)
 
