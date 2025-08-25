@@ -5,7 +5,7 @@
 FinRAGBench-V is a **comprehensive benchmark for visual retrieval-augmented generation (RAG) in finance**, addressing the challenge that most existing financial RAG research focuses predominantly on text while overlooking rich visual content in financial documents. By integrating multimodal data and providing **visual citation**, FinRAGBench-V ensures traceability and supports robust evaluation of Multimodal Large Language Models (MLLMs).
 
 <p align="center">
-  🤗 <a href="https://huggingface.co/datasets/zsfhhh/FinRAGBench-V">Dataset</a> 📄 <a href="https://arxiv.org/abs/2505.17471">Paper</a>
+  🤗 <a href="https://huggingface.co/datasets/zhaosuifeng/FinRAGBench-V">Dataset</a> 📄 <a href="https://arxiv.org/abs/2505.17471">Paper</a>
 </p>
 
 <p align="center">
@@ -45,7 +45,7 @@ pip install -e .
 
 ## Dataset Download and Preprocessing
 
-First, download all dataset files (including **corpus**, **queries**, and **qrels**) from [zsfhhh/FinRAGBench-V](https://huggingface.co/datasets/zsfhhh/FinRAGBench-V/tree/main) and place them into the corresponding folders under `./data/`.
+First, download all dataset files (including **corpus**, **queries**, and **qrels**) from [zhaosuifeng/FinRAGBench-V](https://huggingface.co/datasets/zhaosuifeng/FinRAGBench-V/tree/main) and place them into the corresponding folders under `./data/`.
 
 The corpus is provided in multiple split parts (`part_*.tar.gz`). Please merge them before extraction.
 
