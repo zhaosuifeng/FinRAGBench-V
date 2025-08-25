@@ -4,7 +4,9 @@
 
 FinRAGBench-V is a **comprehensive benchmark for visual retrieval-augmented generation (RAG) in finance**, addressing the challenge that most existing financial RAG research focuses predominantly on text while overlooking rich visual content in financial documents. By integrating multimodal data and providing **visual citation**, FinRAGBench-V ensures traceability and supports robust evaluation of Multimodal Large Language Models (MLLMs).
 
-🤗 [Dataset](https://huggingface.co/datasets/zsfhhh/FinRAGBench-V) | 📄 [Paper](https://arxiv.org/abs/2505.17471) |
+<p align="center">
+  🤗 <a href="https://huggingface.co/datasets/zsfhhh/FinRAGBench-V">Dataset</a> | 📄 <a href="https://arxiv.org/abs/2505.17471">Paper</a>
+</p>
 
 <p align="center">
   <img src="assets/main_fig.png" alt="FinRAGBench-V main figure" width="100%" />
