@@ -67,7 +67,7 @@ cd ../../../prepare_data
 
 # Convert corpus and queries into parquet format
 python generate_parquet.py
-
+```
 
 ## Baseline
 For retrieval and its evaluation:
