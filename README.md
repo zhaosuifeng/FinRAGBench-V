@@ -72,5 +72,22 @@ cd eval
 python eval_generation.py
 python eval_citation.py
 ```
+# Other Related Projects
+- [OpenMatch](https://github.com/thunlp/OpenMatch)
+
+
+## Citation
+If you find this work useful, please cite:
+```bibtex
+@misc{zhao2025finragbenchvbenchmarkmultimodalrag,
+      title={FinRAGBench-V: A Benchmark for Multimodal RAG with Visual Citation in the Financial Domain}, 
+      author={Suifeng Zhao and Zhuoran Jin and Sujian Li and Jun Gao},
+      year={2025},
+      eprint={2505.17471},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2505.17471}, 
+}
+```
 
 
