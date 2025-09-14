@@ -96,14 +96,11 @@ python eval_citation.py
 ## Citation
 If you find this work useful, please cite:
 ```bibtex
-@misc{zhao2025finragbenchvbenchmarkmultimodalrag,
-      title={FinRAGBench-V: A Benchmark for Multimodal RAG with Visual Citation in the Financial Domain}, 
-      author={Suifeng Zhao and Zhuoran Jin and Sujian Li and Jun Gao},
-      year={2025},
-      eprint={2505.17471},
-      archivePrefix={arXiv},
-      primaryClass={cs.CL},
-      url={https://arxiv.org/abs/2505.17471}, 
+@article{zhao2025finragbench,
+  title={FinRAGBench-V: A Benchmark for Multimodal RAG with Visual Citation in the Financial Domain},
+  author={Zhao, Suifeng and Jin, Zhuoran and Li, Sujian and Gao, Jun},
+  journal={arXiv preprint arXiv:2505.17471},
+  year={2025}
 }
 ```
 
