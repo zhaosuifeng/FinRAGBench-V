@@ -14,10 +14,7 @@ from transformers import BatchEncoding
 from openmatch.arguments import InferenceArguments as EncodingArguments
 from openmatch.dataset import InferenceDataset
 from openmatch.modeling import DRModelForInference
-from openmatch.modeling.modeling_gme import GmeQwen2VL
-from openmatch.modeling.modeling_dse import DSE_Qwen
 from openmatch.modeling.modeling_colqwen import ColQwen2Model
-from openmatch.modeling.modeling_colpali import ColPaliModel
 logger = logging.getLogger(__name__)
 from typing import List, cast
 from PIL import Image
@@ -55,7 +52,7 @@ def naive_collator(batch_input):
 
 def distributed_parallel_embedding_inference(
     dataset: InferenceDataset,
-    model: DRModelForInference or GmeQwen2VL or DSE_Qwen or ColQwen2Model,
+    model: DRModelForInference or ColQwen2Model,
     args: EncodingArguments,
     dataset_type: str = "corpus", # corpus or query
     split_save: bool = True, # whether to save the embeddings in separate files
@@ -110,14 +107,7 @@ def distributed_parallel_embedding_inference(
                         print(model_output)
                         encoded_ = model_output.p_reps.cpu().detach().numpy()
                         print(encoded_)
-                    elif isinstance(model,GmeQwen2VL):
-                        encoded_ = model.get_image_embeddings(images=batch['image'])
-                        #print(encoded_.shape)
-                    elif isinstance(model,DSE_Qwen):
-                        model_output = model.encode_image(images=batch['image'])
-                        encoded_ =model_output.cpu().detach().numpy()
-                        #print(encoded_.shape)
-                    elif isinstance(model,ColQwen2Model) or isinstance(model,ColPaliModel):
+                    elif isinstance(model, ColQwen2Model):
                         batch_images = model.processor.process_images(batch['image']).to("cuda:0")
                         model_output=model.model(**batch_images)
                         encoded.extend(list(torch.unbind(model_output.to("cpu"))))
@@ -129,16 +119,7 @@ def distributed_parallel_embedding_inference(
                         print(model_output)
                         encoded_ = model_output.q_reps.cpu().detach().numpy()
                         print(encoded_)
-                    elif isinstance(model, GmeQwen2VL):
-                        encoded_ = model.get_text_embeddings(texts=batch['text'])
-                        #print(encoded_)
-                        #print(encoded_.shape)
-                    elif isinstance(model,DSE_Qwen):
-                        model_output = model.encode_query(queries=batch['text'])
-                        print(model_output)
-                        encoded_=model_output.cpu().detach().to(torch.float16).numpy()
-                        print(encoded_.shape)
-                    elif isinstance(model,ColQwen2Model) or isinstance(model,ColPaliModel):
+                    elif isinstance(model, ColQwen2Model):
                         batch_texts = model.processor.process_queries(batch['text']).to("cuda:0")
                         #print(batch_texts)
                         model_output = model.model(**batch_texts)
@@ -148,7 +129,7 @@ def distributed_parallel_embedding_inference(
                 else:
                     raise ValueError(f"dataset_type: {dataset_type} is not valid.")
 
-                if not isinstance(model,ColQwen2Model) and not isinstance(model,ColPaliModel):
+                if not isinstance(model, ColQwen2Model):
                     if batch_cnt == 0:
                         logger.info(f"encoded_ dtype = {encoded_.dtype}")
                         contains_nan = np.isnan(encoded_).any()
@@ -163,7 +144,7 @@ def distributed_parallel_embedding_inference(
 
         if len(lookup_indices) >= args.max_inmem_docs // args.world_size:
             if split_save:
-                if not isinstance(model,ColQwen2Model) and not isinstance(model,ColPaliModel):
+                if not isinstance(model, ColQwen2Model):
                     encoded = np.concatenate(encoded)
                 with open(
                     os.path.join(
