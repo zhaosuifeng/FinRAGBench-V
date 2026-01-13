@@ -8,7 +8,6 @@ import torch
 from ..arguments import InferenceArguments as EncodingArguments
 logger = logging.getLogger(__name__)
 from openmatch.modeling.modeling_colqwen import ColQwen2Model
-from openmatch.modeling.modeling_colpali import ColPaliModel
 def _retrieve_one_shard(
     corpus_shard_path: str,
     encoded_queries_tensor: torch.Tensor,
@@ -45,7 +44,7 @@ def distributed_parallel_retrieve(
     model
 ):
     with torch.no_grad():
-        if not isinstance(model, ColQwen2Model) and not isinstance(model,ColPaliModel):
+        if not isinstance(model, ColQwen2Model):
             # step1: this process only load its own sharded queriess
             encoded_queries = []
             query_lookup = []
