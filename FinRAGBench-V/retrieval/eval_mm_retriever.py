@@ -7,6 +7,13 @@ import glob
 import csv
 import json
 
+# Add src directory to Python path to enable openmatch imports
+_current_dir = os.path.dirname(os.path.abspath(__file__))
+_project_root = os.path.dirname(_current_dir)
+_src_path = os.path.join(_project_root, 'src')
+if _src_path not in sys.path:
+    sys.path.insert(0, _src_path)
+
 import torch
 import pytrec_eval
 from PIL import Image
@@ -54,7 +61,7 @@ def load_config(config_path):
 
 def main():
     # 配置文件路径
-    config_path = "encode_config.json"
+    config_path = "retrieve_config.json"
     config_data = load_config(config_path)
 
     # 初始化解析器
