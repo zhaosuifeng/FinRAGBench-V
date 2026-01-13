@@ -18,7 +18,6 @@ from transformers.modeling_outputs import ModelOutput
 from ..arguments import DataArguments
 from ..arguments import DRTrainingArguments as TrainingArguments
 from ..arguments import ModelArguments
-from openmatch.modeling.modeling_siglip.processing_siglip import SiglipProcessor
 
 logger = logging.getLogger(__name__)
 
@@ -258,17 +257,8 @@ class DRModel(nn.Module):
 
 
         # ------------- config and model --------------
-        if "siglip" in name or "SigLIP" in name:
-            logging.info("using SIGLIP model, load modeling from openmatch.modeling.modeling_siglip")
-            from openmatch.modeling.modeling_siglip.configuration_siglip import SiglipConfig as config_cls
-            from openmatch.modeling.modeling_siglip.configuration_siglip import SiglipTextConfig, SiglipVisionConfig
-            from openmatch.modeling.modeling_siglip.modeling_siglip import SiglipModel as model_class
-        elif "MiniCPM-V-2" in name or "VisRAG" in name:
-            from openmatch.modeling.modeling_visrag_ret.modeling_visrag_ret import VisRAG_Ret as model_class
-            from openmatch.modeling.modeling_minicpmv.modeling_minicpmv import MiniCPMVConfig as config_cls
-        elif "gme" in name:
-            from openmatch.modeling.modeling_gme.modeling_gme import GmeQwen2VL as model_class
-        else: # other model
+        # Only support standard models and colqwen
+        # other model
             logging.info("using AutoModel model")
             config_cls = AutoConfig
             model_class = AutoModel
@@ -324,8 +314,7 @@ class DRModel(nn.Module):
                 **hf_kwargs
             )
         
-        if "siglip" in name or "SigLIP" in name:
-            lm_q.processor = SiglipProcessor.from_pretrained(model_name_or_path)
+        # Processor setup removed - only colqwen models need special processor handling
 
         
         base_model_arch = type(lm_q).__name__ # in case LoRA will replace class name
